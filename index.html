@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title>Calculator</title>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h2>Simple Calculator</h2>
+
+        <input type="text" name="num-one" id="num-one">
+        <input type="text" name="num-two" id="num-two">
+        <br>
+        <br>
+
+        <b>+</b> <input type="radio" name="sign-area" id="box1" value="add" checked>
+        <b>-</b><input type="radio" name="sign-area" id="box2" value="substract" checked>
+        <b>*</b><input type="radio" name="sign-area" id="box3" value="multiply" checked>
+        <b>/</b><input type="radio" name="sign-area" id="box4" value="divide" checked>
+
+        <br>
+        <br>
+      
+        <button type="button" onclick="outcome()">Calculate</button>
+
+        <h1 id="resultArea"></h1>
+
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     
+
+    <script>
+
+       function outcome(){
+           var x = Number(document.getElementById("num-one").value);
+           var y = Number(document.getElementById("num-two").value);
+           var z = 0;
+
+           if(document.getElementById("box1").checked){
+               z=x+y;
+           }
+           else if(document.getElementById("box2").checked){
+               z=x-y;
+           }
+           else if(document.getElementById("box3").checked){
+               z=x*y;
+           }
+           else{
+               z=x/y;
+           }
+          
+           document.getElementById("resultArea").innerHTML= z;
+       }
+
+    </script>
+
+
+</body>
+</html>
